@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142a26">
+  <meta name="description" content="Something good is on its way.">
+  <title>Coming Soon | Myporti</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #142a26;
+      --night-soft: #1d3831;
+      --cream: #fff3d4;
+      --coral: #ff876d;
+      --lime: #d7ed9b;
+      --muted: #b7c8b7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 280px;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--cream);
+      background-color: var(--night);
+      background-image:
+        radial-gradient(ellipse at 50% 110%, rgba(80, 125, 91, .35), transparent 58%),
+        radial-gradient(circle at 18% 22%, rgba(255, 243, 212, .12) 1px, transparent 1.5px),
+        radial-gradient(circle at 79% 35%, rgba(255, 243, 212, .15) 1px, transparent 1.5px),
+        radial-gradient(circle at 70% 82%, rgba(255, 243, 212, .1) 1px, transparent 1.5px);
+      background-size: auto, 137px 137px, 191px 191px, 113px 113px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100% - 40px, 760px);
+      padding: 48px 0 56px;
+      text-align: center;
+      animation: arrive 900ms cubic-bezier(.2, .75, .25, 1) both;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 16px rgba(255, 135, 109, .7);
+    }
+
+    .moon-scene {
+      position: relative;
+      width: 170px;
+      height: 142px;
+      margin: 25px auto 10px;
+    }
+
+    .moon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 103px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      background: var(--lime);
+      box-shadow: 0 0 45px rgba(215, 237, 155, .21);
+    }
+
+    .moon::after {
+      position: absolute;
+      top: -8px;
+      left: 27px;
+      width: 100px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--night);
+      content: "";
+    }
+
+    .star {
+      position: absolute;
+      z-index: 1;
+      color: var(--coral);
+      animation: twinkle 2.4s ease-in-out infinite alternate;
+    }
+
+    .star-one { top: 35px; left: 12px; font-size: 16px; }
+    .star-two { top: 75px; right: 7px; color: var(--cream); font-size: 11px; animation-delay: .8s; }
+    .star-three { top: 8px; right: 25px; color: var(--cream); font-size: 9px; animation-delay: 1.2s; }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 11vw, 104px);
+      font-weight: 400;
+      letter-spacing: -.055em;
+      line-height: .96;
+    }
+
+    h1 span { color: var(--coral); }
+
+    .subtitle {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(15px, 2.4vw, 18px);
+      line-height: 1.6;
+    }
+
+    .loader {
+      position: relative;
+      width: min(100%, 300px);
+      height: 82px;
+      margin: 42px auto 0;
+      border-bottom: 1px solid rgba(255, 243, 212, .35);
+    }
+
+    .monkey {
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      font-size: 36px;
+      line-height: 1;
+      transform-origin: center bottom;
+      animation: moonwalk 3.2s ease-in-out infinite;
+    }
+
+    .loader-label {
+      position: absolute;
+      right: 0;
+      bottom: -27px;
+      left: 0;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .loader-label::after {
+      display: inline-block;
+      width: 1.2em;
+      text-align: left;
+      content: "...";
+      animation: dots 1.4s steps(4, end) infinite;
+    }
+
+    @keyframes moonwalk {
+      0%, 100% { left: 4%; transform: translateX(0) scaleX(-1) rotate(-5deg); }
+      23% { transform: translateX(-7px) scaleX(-1) rotate(5deg); }
+      48% { left: 58%; transform: translateX(-7px) scaleX(-1) rotate(-4deg); }
+      72% { transform: translateX(0) scaleX(-1) rotate(5deg); }
+    }
+
+    @keyframes twinkle {
+      from { opacity: .45; transform: scale(.8); }
+      to { opacity: 1; transform: scale(1.15); }
+    }
+
+    @keyframes dots {
+      0% { content: ""; }
+      25% { content: "."; }
+      50% { content: ".."; }
+      75%, 100% { content: "..."; }
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-height: 650px) {
+      main { padding: 24px 0 34px; }
+      .moon-scene { height: 108px; margin-top: 12px; }
+      .moon { width: 82px; }
+      .moon::after { left: 22px; width: 80px; }
+      .loader { margin-top: 30px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Myporti</div>
+    <div class="moon-scene" aria-hidden="true">
+      <span class="moon"></span>
+      <span class="star star-one">✦</span>
+      <span class="star star-two">✦</span>
+      <span class="star star-three">✧</span>
+    </div>
+    <h1>Coming<br><span>Soon</span></h1>
+    <p class="subtitle">Something good is on its way.</p>
+    <div class="loader" role="img" aria-label="A monkey moonwalking while the page loads">
+      <span class="monkey" aria-hidden="true">🐒</span>
+      <span class="loader-label" aria-hidden="true">Loading</span>
+    </div>
+  </main>
+</body>
+</html>
