@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142a26">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Something good is on its way.">
   <title>Coming Soon | Myporti</title>
   <style>
     :root {
-      color-scheme: dark;
-      --night: #142a26;
-      --night-soft: #1d3831;
-      --cream: #fff3d4;
-      --coral: #ff876d;
-      --lime: #d7ed9b;
-      --muted: #b7c8b7;
+      color-scheme: light;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: #17231b;
+      background: #fff;
     }
 
     * { box-sizing: border-box; }
@@ -22,153 +19,75 @@
     body {
       min-width: 280px;
       min-height: 100vh;
+      min-height: 100svh;
       margin: 0;
       display: grid;
       place-items: center;
-      overflow: hidden;
-      color: var(--cream);
-      background-color: var(--night);
-      background-image:
-        radial-gradient(ellipse at 50% 110%, rgba(80, 125, 91, .35), transparent 58%),
-        radial-gradient(circle at 18% 22%, rgba(255, 243, 212, .12) 1px, transparent 1.5px),
-        radial-gradient(circle at 79% 35%, rgba(255, 243, 212, .15) 1px, transparent 1.5px),
-        radial-gradient(circle at 70% 82%, rgba(255, 243, 212, .1) 1px, transparent 1.5px);
-      background-size: auto, 137px 137px, 191px 191px, 113px 113px;
-      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      background: #fff;
     }
 
     main {
-      width: min(100% - 40px, 760px);
-      padding: 48px 0 56px;
+      width: min(100% - 40px, 560px);
+      padding: 40px 0;
       text-align: center;
-      animation: arrive 900ms cubic-bezier(.2, .75, .25, 1) both;
+      animation: arrive 700ms ease-out both;
     }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--lime);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .brand-mark {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--coral);
-      box-shadow: 0 0 16px rgba(255, 135, 109, .7);
-    }
-
-    .moon-scene {
-      position: relative;
-      width: 170px;
-      height: 142px;
-      margin: 25px auto 10px;
-    }
-
-    .moon {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 103px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      transform: translateX(-50%);
-      background: var(--lime);
-      box-shadow: 0 0 45px rgba(215, 237, 155, .21);
-    }
-
-    .moon::after {
-      position: absolute;
-      top: -8px;
-      left: 27px;
-      width: 100px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: var(--night);
-      content: "";
-    }
-
-    .star {
-      position: absolute;
-      z-index: 1;
-      color: var(--coral);
-      animation: twinkle 2.4s ease-in-out infinite alternate;
-    }
-
-    .star-one { top: 35px; left: 12px; font-size: 16px; }
-    .star-two { top: 75px; right: 7px; color: var(--cream); font-size: 11px; animation-delay: .8s; }
-    .star-three { top: 8px; right: 25px; color: var(--cream); font-size: 9px; animation-delay: 1.2s; }
 
     h1 {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(52px, 11vw, 104px);
-      font-weight: 400;
-      letter-spacing: -.055em;
-      line-height: .96;
-    }
-
-    h1 span { color: var(--coral); }
-
-    .subtitle {
-      margin: 22px 0 0;
-      color: var(--muted);
-      font-size: clamp(15px, 2.4vw, 18px);
-      line-height: 1.6;
-    }
-
-    .loader {
-      position: relative;
-      width: min(100%, 300px);
-      height: 82px;
-      margin: 42px auto 0;
-      border-bottom: 1px solid rgba(255, 243, 212, .35);
+      font-size: clamp(42px, 10vw, 72px);
+      font-weight: 800;
+      letter-spacing: -.06em;
+      line-height: 1;
     }
 
     .monkey {
-      position: absolute;
-      bottom: 8px;
-      left: 0;
-      font-size: 36px;
-      line-height: 1;
-      transform-origin: center bottom;
-      animation: moonwalk 3.2s ease-in-out infinite;
+      display: block;
+      width: 144px;
+      height: 144px;
+      margin: 28px auto 18px;
+      image-rendering: pixelated;
+      animation: float 1.2s ease-in-out infinite;
+    }
+
+    .loader {
+      width: min(100%, 220px);
+      height: 8px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 0;
+      background: #e8eee9;
+    }
+
+    .loader-fill {
+      width: 38%;
+      height: 100%;
+      background: #36a269;
+      animation: loading 1.5s ease-in-out infinite;
     }
 
     .loader-label {
-      position: absolute;
-      right: 0;
-      bottom: -27px;
-      left: 0;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .22em;
+      margin: 14px 0 0;
+      color: #657369;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
     .loader-label::after {
-      display: inline-block;
-      width: 1.2em;
-      text-align: left;
       content: "...";
-      animation: dots 1.4s steps(4, end) infinite;
+      animation: dots 1.2s steps(4, end) infinite;
     }
 
-    @keyframes moonwalk {
-      0%, 100% { left: 4%; transform: translateX(0) scaleX(-1) rotate(-5deg); }
-      23% { transform: translateX(-7px) scaleX(-1) rotate(5deg); }
-      48% { left: 58%; transform: translateX(-7px) scaleX(-1) rotate(-4deg); }
-      72% { transform: translateX(0) scaleX(-1) rotate(5deg); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
-    @keyframes twinkle {
-      from { opacity: .45; transform: scale(.8); }
-      to { opacity: 1; transform: scale(1.15); }
+    @keyframes loading {
+      0% { transform: translateX(-110%); }
+      100% { transform: translateX(290%); }
     }
 
     @keyframes dots {
@@ -179,21 +98,12 @@
     }
 
     @keyframes arrive {
-      from { opacity: 0; transform: translateY(14px); }
+      from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-height: 650px) {
-      main { padding: 24px 0 34px; }
-      .moon-scene { height: 108px; margin-top: 12px; }
-      .moon { width: 82px; }
-      .moon::after { left: 22px; width: 80px; }
-      .loader { margin-top: 30px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
       }
@@ -202,19 +112,55 @@
 </head>
 <body>
   <main>
-    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Myporti</div>
-    <div class="moon-scene" aria-hidden="true">
-      <span class="moon"></span>
-      <span class="star star-one">✦</span>
-      <span class="star star-two">✦</span>
-      <span class="star star-three">✧</span>
+    <h1>Coming Soon</h1>
+    <svg class="monkey" viewBox="0 0 18 17" role="img" aria-label="Pixel-art monkey" shape-rendering="crispEdges">
+      <g fill="#62483b">
+        <rect x="8" y="0" width="1" height="1"/>
+        <rect x="6" y="1" width="6" height="1"/>
+        <rect x="5" y="2" width="8" height="1"/>
+        <rect x="4" y="3" width="10" height="1"/>
+        <rect x="3" y="4" width="12" height="1"/>
+        <rect x="3" y="5" width="2" height="5"/>
+        <rect x="13" y="5" width="2" height="5"/>
+        <rect x="5" y="4" width="3" height="1"/>
+        <rect x="10" y="4" width="3" height="1"/>
+        <rect x="7" y="4" width="3" height="2"/>
+        <rect x="4" y="9" width="2" height="1"/>
+        <rect x="12" y="9" width="2" height="1"/>
+        <rect x="6" y="10" width="6" height="1"/>
+        <rect x="6" y="11" width="2" height="3"/>
+        <rect x="10" y="11" width="2" height="3"/>
+        <rect x="5" y="13" width="3" height="2"/>
+        <rect x="10" y="13" width="3" height="2"/>
+        <rect x="5" y="15" width="2" height="1"/>
+        <rect x="9" y="15" width="2" height="1"/>
+        <rect x="12" y="11" width="2" height="1"/>
+        <rect x="14" y="10" width="2" height="2"/>
+        <rect x="15" y="9" width="1" height="1"/>
+      </g>
+      <g fill="#e9c995">
+        <rect x="2" y="6" width="1" height="2"/>
+        <rect x="15" y="6" width="1" height="2"/>
+        <rect x="5" y="5" width="8" height="4"/>
+        <rect x="6" y="9" width="6" height="1"/>
+        <rect x="8" y="4" width="2" height="1"/>
+        <rect x="7" y="15" width="1" height="1"/>
+        <rect x="10" y="15" width="1" height="1"/>
+      </g>
+      <g fill="#ffffff">
+        <rect x="5" y="6" width="2" height="2"/>
+        <rect x="11" y="6" width="2" height="2"/>
+      </g>
+      <g fill="#111111">
+        <rect x="6" y="6" width="1" height="2"/>
+        <rect x="11" y="6" width="1" height="2"/>
+      </g>
+      <rect x="8" y="9" width="2" height="1" fill="#e87b9b"/>
+    </svg>
+    <div class="loader" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100">
+      <div class="loader-fill"></div>
     </div>
-    <h1>Coming<br><span>Soon</span></h1>
-    <p class="subtitle">Something good is on its way.</p>
-    <div class="loader" role="img" aria-label="A monkey moonwalking while the page loads">
-      <span class="monkey" aria-hidden="true">🐒</span>
-      <span class="loader-label" aria-hidden="true">Loading</span>
-    </div>
+    <p class="loader-label" aria-hidden="true">Loading</p>
   </main>
 </body>
 </html>
